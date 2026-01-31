@@ -1,3 +1,4 @@
+<img width="1920" height="890" alt="image" src="https://github.com/user-attachments/assets/01feef64-c29c-435a-8065-7373abb95faf" />
 # UserManagement
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
