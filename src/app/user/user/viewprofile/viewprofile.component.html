@@ -1,0 +1,184 @@
+<div class="max-w-lg mx-auto bg-[#F7F7FB] rounded-2xl p-5 shadow-md mt-6">
+
+  <!-- Back -->
+  <button
+    routerLink="/users"
+    class="text-sm  mb-4 flex justify-center items-center gap-2 "   >
+    <svg width="9" height="14" viewBox="0 0 9 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.74208 7.70833L8.01937 1.43104C8.18493 1.26549 8.26556 1.0684 8.26125 0.839792C8.25694 0.611181 8.17201 0.414027 8.00646 0.248333C7.8409 0.0827774 7.64382 0 7.41521 0C7.1866 0 6.98944 0.0827774 6.82375 0.248333L0.443959 6.64104C0.293403 6.79174 0.181807 6.96056 0.109167 7.1475C0.0363894 7.33444 9.53674e-07 7.52139 9.53674e-07 7.70833C9.53674e-07 7.89528 0.0363894 8.08222 0.109167 8.26917C0.181807 8.45611 0.293403 8.62493 0.443959 8.77563L6.83667 15.1683C7.00222 15.3339 7.19715 15.4145 7.42146 15.4102C7.6459 15.4059 7.8409 15.321 8.00646 15.1554C8.17201 14.9899 8.25479 14.7928 8.25479 14.5642C8.25479 14.3356 8.17201 14.1384 8.00646 13.9727L1.74208 7.70833Z" fill="#0E0031"/>
+</svg>
+Back to Users
+  </button>
+
+  <!-- Header -->
+  <div class="flex items-center justify-between bg-white rounded-xl p-4 mb-4">
+
+    <div class="flex items-center gap-3">
+      <img
+        src="assets/Group 111.png"
+        alt="profile"
+        class="w-14 h-14 rounded-full"
+      />
+
+      <div>
+        <p class="font-semibold text-gray-800">
+          {{ user?.name }}
+        </p>
+        <p class="text-sm text-gray-500 flex items-center gap-1">
+          {{ user?.username }}
+          <span class="text-xs">📋</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Toggle -->
+    <label class="relative inline-flex items-center cursor-pointer">
+      <input type="checkbox" class="sr-only peer" checked>
+      <div
+        class="w-10 h-5 bg-gray-300 rounded-full peer
+               peer-checked:bg-green-500
+               after:content-['']
+               after:absolute after:top-0.5 after:left-0.5
+               after:w-4 after:h-4 after:bg-white after:rounded-full
+               after:transition-all
+               peer-checked:after:translate-x-5">
+      </div>
+    </label>
+  </div>
+
+  <!-- Details -->
+  <div class="bg-white rounded-xl divide-y text-sm">
+<div class="flex justify-between items-center p-3">
+
+  <!-- LEFT : Icon + Label -->
+  <div class="flex items-center gap-2 ">
+    
+    <!-- Phone SVG -->
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.2002 17.0833C14.6298 17.0833 13.0521 16.7182 11.4671 15.9879C9.88221 15.2576 8.42603 14.2275 7.09853 12.8975C5.77117 11.5673 4.74235 10.1111 4.01207 8.52871C3.2818 6.94649 2.91666 5.37017 2.91666 3.79975C2.91666 3.54739 2.99999 3.33711 3.16666 3.16892C3.33332 3.00072 3.54166 2.91663 3.79166 2.91663H6.50957C6.71999 2.91663 6.90562 2.98531 7.06645 3.12267C7.22728 3.25989 7.32957 3.42947 7.37332 3.63142L7.85103 6.08329C7.88409 6.31079 7.87714 6.50628 7.8302 6.66975C7.78312 6.83322 7.69867 6.97051 7.57687 7.08163L5.65228 8.95517C5.962 9.52239 6.31589 10.059 6.71395 10.565C7.11187 11.0708 7.5427 11.5539 8.00645 12.0143C8.46367 12.4717 8.94978 12.8964 9.46478 13.2885C9.97978 13.6806 10.5359 14.0454 11.1331 14.3831L13.0031 12.4968C13.1335 12.3611 13.2914 12.266 13.4769 12.2114C13.6621 12.157 13.8547 12.1436 14.0546 12.1714L16.3685 12.6427C16.5789 12.6982 16.7507 12.8056 16.8837 12.9648C17.0168 13.1239 17.0833 13.3045 17.0833 13.5064V16.2083C17.0833 16.4583 16.9992 16.6666 16.831 16.8333C16.6628 17 16.4526 17.0833 16.2002 17.0833Z"
+        fill="#6B7280" />
+    </svg>
+
+    <span>Phone No</span>
+  </div>
+
+  <!-- RIGHT : Value -->
+  <span class="font-medium text-gray-800">
+    {{ user?.phone }}
+  </span>
+
+</div>
+
+
+ <div class="flex justify-between items-center p-3">
+
+  <!-- LEFT : Icon + Label -->
+  <div class="flex items-center gap-2 ">
+
+    <!-- Email SVG ICON (small & correct) -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4 6H20C21.1 6 22 6.9 22 8V16C22 17.1 21.1 18 20 18H4C2.9 18 2 17.1 2 16V8C2 6.9 2.9 6 4 6Z"
+        stroke="#6B7280"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+      <path
+        d="M22 8L12 13L2 8"
+        stroke="#6B7280"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+
+    <span>Email ID</span>
+  </div>
+
+  <!-- RIGHT : Value -->
+  <span class="font-medium text-gray-800 break-all text-right">
+    {{ user?.email }}
+  </span>
+
+</div>
+
+
+   <div class="flex justify-between items-center p-3">
+
+  <!-- LEFT : Icon + Label -->
+  <div class="flex items-center gap-2 ">
+
+    <!-- Hostel SVG -->
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+      xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M7.38475 17.7307H8.30775V16.3462H15.6923V17.7307H16.6152V14.0385C16.6152 13.5308 16.4345 13.0962 16.073 12.7347C15.7115 12.3731 15.2769 12.1922 14.7693 12.1922H11.5385V15.423H8.30775V11.2692H7.38475V17.7307ZM9.9245 14.9615C10.248 14.9615 10.5209 14.8498 10.7433 14.6265C10.9658 14.4031 11.077 14.1297 11.077 13.8062C11.077 13.4829 10.9653 13.21 10.742 12.9875C10.5187 12.765 10.2453 12.6537 9.92175 12.6537C9.59825 12.6537 9.32533 12.7654 9.103 12.9887C8.8805 13.2121 8.76925 13.4855 8.76925 13.809C8.76925 14.1325 8.88092 14.4055 9.10425 14.628C9.32758 14.8503 9.601 14.9615 9.9245 14.9615ZM4.5 20.5V9.24998L12 3.61548L19.5 9.24998V20.5H4.5ZM6 19H18V9.99998L12 5.49998L6 9.99998V19Z"
+        fill="#6B7280" />
+    </svg>
+
+    <span>Hostels Assigned</span>
+  </div>
+
+  <!-- RIGHT : Value -->
+  <span class="font-medium text-gray-800">
+    {{ user?.hostelCount || '06' }}
+  </span>
+
+</div>
+
+  <div class="flex justify-between items-start p-3">
+
+  <!-- LEFT : Icon + Label -->
+  <div class="flex items-start gap-2  max-w-[45%]">
+
+    <!-- Hostel Names SVG -->
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+      xmlns="http://www.w3.org/2000/svg" class="mt-0.5">
+      <path
+        d="M1.97122 17.1473V2.56396H9.88768V5.8973H18.0287V12.6921H16.7789V7.1473H9.88768V9.23063H11.7148V10.4806H9.88768V12.564H11.7148V13.814H9.88768V15.8973H13.5416V17.1473H1.97122ZM3.22101 15.8973H5.30456V13.814H3.22101V15.8973ZM3.22101 12.564H5.30456V10.4806H3.22101V12.564ZM3.22101 9.23063H5.30456V7.1473H3.22101V9.23063ZM3.22101 5.8973H5.30456V3.81396H3.22101V5.8973ZM6.55435 15.8973H8.63789V13.814H6.55435V15.8973ZM6.55435 12.564H8.63789V10.4806H6.55435V12.564ZM6.55435 9.23063H8.63789V7.1473H6.55435V9.23063ZM6.55435 5.8973H8.63789V3.81396H6.55435V5.8973ZM16.7789 18.814V17.1473H15.1123V15.8973H16.7789V14.2306H18.0287V15.8973H19.6954V17.1473H18.0287V18.814H16.7789ZM13.5416 10.4806V9.23063H14.7916V10.4806H13.5416ZM13.5416 13.814V12.564H14.7916V13.814H13.5416Z"
+        fill="#6B7280" />
+    </svg>
+
+    <span>Hostel Names</span>
+  </div>
+
+  <!-- RIGHT : Value (wraps nicely) -->
+  <span class="font-medium text-gray-800 text-right max-w-[55%]">
+    {{ user?.hostels || 'Shradha Park | Saikheda | GHRU' }}
+  </span>
+
+</div>
+
+
+   <div class="flex justify-between items-start p-3">
+
+  <!-- LEFT : Icon + Label -->
+  <div class="flex items-start gap-2  max-w-[45%]">
+
+    <!-- Location SVG -->
+    <svg xmlns="http://www.w3.org/2000/svg"
+      fill="none" viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-5 h-5 mt-0.5">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+    </svg>
+
+    <span>Address</span>
+  </div>
+
+  <!-- RIGHT : Value -->
+  <span class="font-medium text-gray-800 text-right max-w-[55%]">
+    {{ user?.address?.street }},
+    {{ user?.address?.city }}
+  </span>
+
+</div>
+
+
+  </div>
+</div>

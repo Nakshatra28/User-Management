@@ -1,0 +1,234 @@
+<div
+  class="w-max mt-3 flex flex-col md:flex-row md:items-center md:justify-between lg:flex lg:justify-between lg:w-full gap-3 px-6 py-4 md:w-[100%] bg-white rounded-2xl shadow-md"
+>
+  <div>
+    <p class="text-[#674D9F]">User Management</p>
+    <p class="text-gray-400 text-sm">Hi, Welcome to User Management</p>
+  </div>
+  <div
+    class="relative w-full sm:w-fit"
+    appClickOutside
+    (outsideClick)="closeDropdown()"
+  >
+    <!-- TOGGLE BUTTON -->
+    <div
+      (click)="toggleAddOptions(); $event.stopPropagation()"
+      class="flex items-center gap-2 cursor-pointer text-white bg-[#674D9F] text-xs sm:text-sm md:text-sm py-2 px-3 rounded-lg select-none w-fit"
+    >
+      <span>Add Users</span>
+
+      <!-- Down Arrow -->
+      <svg
+        *ngIf="!showAddOptions"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M6 9l6 6 6-6" />
+      </svg>
+
+      <!-- Up Arrow -->
+      <svg
+        *ngIf="showAddOptions"
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </div>
+
+    <!-- DROPDOWN -->
+    <div
+      *ngIf="showAddOptions"
+      class="absolute mt-2 w-28 bg-white rounded-lg shadow-lg text-sm"
+    >
+      <div
+        class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+        routerLink="/users/add-staff"
+        (click)="$event.stopPropagation()"
+      >
+        Add Staff
+      </div>
+
+      <div
+        class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+        (click)="$event.stopPropagation()"
+      >
+        Add Student
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:w-full sm:mx-0"
+>
+  <!-- Card 1 -->
+  <div class="w-full bg-white h-28 rounded-lg shadow-md">
+    <div
+      class="bg-[#674D9F] text-white flex justify-between px-3 py-1 rounded-t-lg"
+    >
+      <p>Hotel Admin Count</p>
+    </div>
+
+    <div class="flex justify-around mt-4 text-sm">
+      <p>In-Active -</p>
+      <p>Active -</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="w-full bg-white h-28 rounded-lg shadow-md">
+    <div
+      class="bg-[#674D9F] text-white flex justify-between px-3 py-1 rounded-t-lg"
+    >
+      <p>Hotel Staff Count</p>
+    </div>
+
+    <div class="flex justify-around mt-4 text-sm">
+      <p>In-Active -</p>
+      <p>Active -</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="w-full bg-white h-28 rounded-lg shadow-md">
+    <div
+      class="bg-[#674D9F] text-white flex justify-between px-3 py-1 rounded-t-lg"
+    >
+      <p>Hotel Students Count</p>
+    </div>
+
+    <div class="flex justify-around mt-4 text-sm">
+      <p>In-Active -</p>
+      <p>Active -</p>
+    </div>
+  </div>
+</div>
+
+<div
+  class="border border-purple-500 rounded-lg flex flex-col h-auto md:h-[80vh] w-[92%] mx-auto sm:w-full sm:mx-0 my-4"
+>
+  <div
+    class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-4 px-2 border-b border-purple-500"
+  >
+    <!-- Left: Dropdown -->
+    <div class="relative mt-2" appClickOutside (outsideClick)="closeDropdown()">
+      <!-- Button -->
+      <button
+        (click)="toggleRole(); $event.stopPropagation()"
+        class="flex items-center font-medium bg-white rounded /* MOBILE ONLY (below 640px) */ max-sm:px-1 max-sm:py-0.5 max-sm:text-[10px] max-sm:gap-1 /* TABLET + DESKTOP */ px-4 py-1 text-sm gap-2"
+      >
+        {{ selectedRole }}
+
+        <svg
+          class="max-sm:w-2.5 max-sm:h-2.5 w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </button>
+
+      <!-- Dropdown -->
+      <div
+        *ngIf="showRoleDropdown"
+        class="absolute mt-2 w-36 text-sm bg-white rounded-lg shadow-lg z-10"
+      >
+        <div
+          class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+          (click)="selectRole('Hostel Admins'); $event.stopPropagation()"
+        >
+          Hostel Admins
+        </div>
+
+        <div
+          class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+          (click)="selectRole('Hostel Staff'); $event.stopPropagation()"
+        >
+          Hostel Staff
+        </div>
+
+        <div
+          class="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+          (click)="selectRole('Hostel Students'); $event.stopPropagation()"
+        >
+          Hostel Students
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Status Tabs -->
+    <div class="flex gap-1.5 p-2 flex-wrap">
+      <button
+        *ngFor="let status of statuses"
+        (click)="onStatusChange(status)"
+        class="max-sm:px-2 max-sm:py-0.5 max-sm:text-[10px] max-sm:rounded-md px-3 py-1 text-sm rounded-lg shadow-xs shadow-black hover:border-t hover:border-purple-500"
+        [class.bg-[#6E57A3]]="activeStatus === status"
+        [class.text-white]="activeStatus === status"
+      >
+        {{ status }}
+      </button>
+    </div>
+  </div>
+
+  <div class="flex-1 overflow-y-auto px-2 py-2">
+    <div class="flex justify-center">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2 w-[90%] sm:w-full"
+      >
+        <div
+          *ngFor="let user of filteredUsers"
+          class="bg-white rounded-xl p-3 shadow-md text-center w-full sm:w-40 md:w-52 lg:w-40"
+        >
+          <div
+            class="flex items-center justify-between text-xs font-semibold mb-2 px-1"
+          >
+            <span>ADMIN 01</span>
+
+            <!-- Active / Inactive Toggle -->
+            <div
+              class="w-7 h-4 flex items-center rounded-full p-0.5 transition cursor-pointer"
+              [class.bg-green-500]="user.active"
+              [class.bg-gray-300]="!user.active"
+            >
+              <div
+                class="w-3 h-3 bg-white rounded-full shadow-md transition"
+                [class.translate-x-3]="user.active"
+              ></div>
+            </div>
+          </div>
+
+          <img
+            src="assets/Group 111.png"
+            class="w-16 h-16 mx-auto rounded-full mb-2"
+          />
+
+          <p class="font-medium">{{ user.name }}</p>
+          <p class="text-xs text-gray-500">{{ user.code }}</p>
+          <p class="text-xs text-gray-500">{{ user.phone }}</p>
+
+          <button
+            [routerLink]="['/users', user.id]"
+            class="mt-3 w-max px-4 text-sm border rounded-full py-1 text-[#6E57A3]"
+          >
+            View Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

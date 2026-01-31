@@ -1,0 +1,69 @@
+<div class="max-w-3xl mx-auto bg-white rounded-xl p-6 shadow mt-6">
+
+  <!-- Back -->
+  <button
+    routerLink="/users"
+    class="text-sm text-purple-600 mb-6 flex items-center gap-1">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+</svg>
+ Back
+  </button>
+
+  <h2 class="text-lg font-semibold mb-6">Create Staff</h2>
+
+  <div class="grid grid-cols-2 gap-4">
+
+    <div>
+      <label class="text-sm">Your Role</label>
+      <select class="w-full border rounded px-3 py-2 text-sm">
+        <option>Staff</option>
+      </select>
+    </div>
+
+    <div>
+      <label class="text-sm">User Name</label>
+      <input class="w-full border rounded px-3 py-2 text-sm" />
+    </div>
+
+    <div>
+      <label class="text-sm">Password</label>
+      <input type="password" class="w-full border rounded px-3 py-2 text-sm" />
+    </div>
+
+    <div>
+      <label class="text-sm">Phone Number</label>
+      <input class="w-full border rounded px-3 py-2 text-sm" />
+    </div>
+
+    <div>
+      <label class="text-sm">Date of Birth</label>
+      <input type="date" class="w-full border rounded px-3 py-2 text-sm" />
+    </div>
+
+    <div>
+      <label class="text-sm">Joining Date</label>
+      <input type="date" class="w-full border rounded px-3 py-2 text-sm" />
+    </div>
+
+  </div>
+
+  <!-- Gender -->
+  <div class="mt-6">
+    <p class="text-sm mb-2">Gender</p>
+    <div class="flex gap-3">
+      <button class="border px-4 py-1 rounded text-sm">Female</button>
+      <button class="border px-4 py-1 rounded text-sm">Male</button>
+      <button class="border px-4 py-1 rounded text-sm">Other</button>
+    </div>
+  </div>
+
+  <!-- Submit -->
+  <div class="mt-8">
+    <button
+      class="bg-[#6E57A3] text-white px-6 py-2 rounded-lg text-sm">
+      Create Staff
+    </button>
+  </div>
+
+</div>
